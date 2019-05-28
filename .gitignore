@@ -108,3 +108,6 @@ venv.bak/
 
 # keras models
 *.hdf5
+
+# large file
+unfiltered_weather_df.csv
