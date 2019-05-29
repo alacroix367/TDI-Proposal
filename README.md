@@ -27,14 +27,15 @@ Several visualizations were made using a combination of Python's `matplotlib` an
 
 **C. Autocorrelation in wind energy output -** Line plot showing that wind energy autocorrelations quickly drop to zero off after ~5hrs, indicating that naive wind energy forecasts (future energy output = current energy output) would only be reliable up to ~2.5hrs in the future.
 
-**D. Time-series LSTM model optimization -** Several line plots showing the progression of model development:
+**D. Time-series LSTM model optimization -** Several line plots showing the progression of model optimization/development:
  - addition of more hidden layers did not increase the predictive power of the model
  - dropout layers increased robustness of model to overfitting, but increased training time (n_epochs required to reach minimal loss)
  - regularization also lead to more robust models, with very small alpha
+ - learning rates larger (faster) than the default 0.001 actually led to models with higher accuracy
  
 **E. Model predictions vs naive model -** Line plots and box plots showing LSTM model outperforms naiive predictions across all timescales, especially for predictions made > 48 hrs in advance.
 
-**F. Quality of predictions of final model -** Scatter plot showing that, up to 2 weeks in advance, cumulative energy generated over a 24hr period tracks closely with the actual energy generated.<br><br>
+**F. Quality of predictions of final model -** Scatter plot showing that, up to 1 week in advance, cumulative energy generated over a 24hr period tracks closely with the actual energy generated.<br><br>
 
 
 ### 4. Machine Learning
