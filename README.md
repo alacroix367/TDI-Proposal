@@ -19,23 +19,24 @@ The overall goal of this project is to provide accurate, long-term predictions o
  - **Note:** Cleaning, time-synchronizing, and joining these datasets was accomplished using `pandas DataFrames`<br><br>
 
 ### 3. Visualizations:
-Several visualizations were made using a combination of Python's `matplotlib` and `seaborn` libraries. The majority of these visualizations were made interactive via `ipywidgets` `interact` function. Here is a list of the most prominent visualizations:
+Several visualizations were made using a combination of Python's `matplotlib` and `seaborn` libraries as well as `geopandas` for an initial visualization of weather station locations. The majority of these visualizations were made interactive via `ipywidgets` `interact` function. Here is a list of the most prominent visualizations:
 
-**A. Distance between wind farms and weather stations -** 1D strip-plot showing that weather stations and wind farms were close enough in proximity to analyze together.
+**A. Locations of wind farms -** Locations of weather stations in and around Ontario Canada.
 
-**B. Seasonality in wind energy and weather data -** Line plot showing daily and yearly seasonality trends in wind power output, indicating it is important to include hour-of-the-day and month-of-the-year as predictors in time-series modeling. Note: these seasonalities were also reflected in wind speed data, since it is the strongest predictor of wind energy generation.
+**B. Distance between wind farms and weather stations -** 1D strip-plot showing that weather stations and wind farms were close enough in proximity to analyze together.
 
-**C. Autocorrelation in wind energy output -** Line plot showing that wind energy autocorrelations quickly drop to zero off after ~5hrs, indicating that naive wind energy forecasts (future energy output = current energy output) would only be reliable up to ~2.5hrs in the future.
+**C. Seasonality in wind energy and weather data -** Line plot showing daily and yearly seasonality trends in wind power output, indicating it is important to include hour-of-the-day and month-of-the-year as predictors in time-series modeling. Note: these seasonalities were also reflected in wind speed data, since it is the strongest predictor of wind energy generation.
 
-**D. Time-series LSTM model optimization -** Several line plots showing the progression of model optimization/development:
- - addition of more hidden layers did not increase the predictive power of the model
+**D. Autocorrelation in wind energy output -** Line plot showing that wind energy autocorrelations quickly drop to zero off after ~5hrs, indicating that naive wind energy forecasts (future energy output = current energy output) would only be reliable up to ~2.5hrs in the future.
+
+**E. Time-series LSTM model optimization -** Several line plots showing the progression of model optimization/development:
  - dropout layers increased robustness of model to overfitting, but increased training time (n_epochs required to reach minimal loss)
  - regularization also lead to more robust models, with very small alpha
  - learning rates larger (faster) than the default 0.001 actually led to models with higher accuracy
  
-**E. Model predictions vs naive model -** Line plots and box plots showing LSTM model outperforms naiive predictions across all timescales, especially for predictions made > 48 hrs in advance.
+**F. Model predictions vs naive model -** Line plots of 1 week forecasts showing LSTM model significantly outperforms naiive predictions across all timescales, especially for predictions made > 48 hrs in advance.
 
-**F. Quality of predictions of final model -** Scatter plot showing that, up to 1 week in advance, cumulative energy generated over a 24hr period tracks closely with the actual energy generated.<br><br>
+**G. Quality of predictions of final model -** Scatter plot showing that, up to 1 week in advance, cumulative energy generated over a 24hr period tracks closely with the actual energy generated.<br><br>
 
 
 ### 4. Machine Learning
